@@ -43,3 +43,35 @@ async function addTask() {
     getTasks();
 }
 
+async function deleteTask(id) {
+    const response = await fetch(`http://localhost:3000/tasks/${id}`, {
+        method: "DELETE",
+        headers: {
+            "content-type": "application/json"
+        },
+        body: JSON.stringify({
+            id: id
+        })
+    });
+
+    getTasks();
+}
+
+
+function renderTasks(tasks) {
+    toDoContainer.replaceChildren();
+
+    tasks.forEach(function (item) {
+        const liElement = document.createElement("li");
+        liElement.innerText = item.title;
+
+        const deleteButton = document.createElement("button");
+        deleteButton.innerText = "Delete";
+        deleteButton.onclick = function () {
+            deleteTask(item.id);
+        };
+
+        liElement.append(deleteButton);
+        toDoContainer.append(liElement);
+    });
+}
