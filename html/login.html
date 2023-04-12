@@ -1,0 +1,40 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body {
+          background-image: linear-gradient(to bottom right, #99ccff, #ff99cc);
+          height: 100vh;
+        }
+      </style>
+  </head>
+
+  <body>
+            <div class="login-form">
+            <form>
+              <h1>Login</h1>
+              <div class="content">
+                <div class="email_input">
+                  <input id="email_input" type="email" placeholder="Email" autocomplete="nope">
+                </div>
+                <div class="password_input">
+                  <input id="password_input" type="password" placeholder="Password" autocomplete="new-password">
+                </div>
+
+              </div>
+              <div class="action">
+                <button type="button" onclick="tryLogin()">Login</button>
+              </div>
+            </form>
+          </div>
+
+    <script src="/js/checkLogin.js"></script>
+    <script src="/js/login.js"></script>
+  </body>
+</html>
+
+

@@ -1,5 +1,6 @@
 const tasksElement = document.getElementById("tasks");
 const inputField = document.getElementById(`inputField`);
+debugger;
 
 async function getTasks() {
   const response = await fetch("http://localhost:3000/tasks", {
@@ -12,6 +13,12 @@ async function getTasks() {
 
 async function addTask() {
   const title = inputField.value;
+
+  // Überprüfen, ob das Input-Feld leer ist
+  if (title.trim() === "") {
+    alert("Das Feld darf nicht leer sein!");
+    return;
+  }
 
   const response = await fetch("http://localhost:3000/tasks", {
     method: "POST",
@@ -57,6 +64,11 @@ async function deleteTask(id) {
   getTasks();
 }
 
+document.forms[0].addEventListener("submit", function (event) {
+  event.preventDefault();
+  return false;
+});
+//renderTask
 function renderTasks(tasks) {
   tasksElement.replaceChildren();
 
@@ -88,15 +100,15 @@ function renderTasks(tasks) {
     });
 
     const deleteButton = document.createElement("button");
-    deleteButton.innerHTML =
-      '<img class="img" src="/images/delete.png" alt="Edit">';
+    // deleteButton.innerHTML =
+    //   '<img class="img" src="/images/delete.png" alt="Edit">';
     deleteButton.onclick = function () {
       deleteTask(item.id);
     };
 
     const editButton = document.createElement("button");
-    editButton.innerHTML =
-      '<img class="img" src="/images/edit.png" alt="Edit">';
+    // editButton.innerHTML =
+    //   '<img class="img" src="/images/edit.png" alt="Edit">';
     editButton.onclick = function () {
       editTask(item.id);
     };
@@ -105,4 +117,18 @@ function renderTasks(tasks) {
     liElement.append(editButton);
     tasksElement.append(liElement);
   });
+}
+
+async function logout() {
+  const response = await fetch("http://localhost:3000/auth/cookie/logout", {
+    credentials: "include",
+    method: "POST",
+  });
+
+  if (response.ok) {
+    // Redirect to login page
+    window.location.href = "/html/login.html";
+  } else {
+    alert("Logout failed.");
+  }
 }
