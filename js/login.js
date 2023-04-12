@@ -5,7 +5,7 @@ async function tryLogin() {
     // Regex-Test für E-Mail-Format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-        alert("Invalid email address.");
+        alert("Invalid email address");
         return;
     }
     const response = await fetch("http://localhost:3000/auth/cookie/login", {
