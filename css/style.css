@@ -12,6 +12,27 @@
   z-index: 1;
 }
 
+.list-group li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonWrapper {
+  display: flex;
+}
+
+.list-group li button {
+  background-color: transparent;
+  border: none;
+  width: 2rem;
+  padding: 5px;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
 * {
   margin: 0;
@@ -19,8 +40,6 @@
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
 }
-
-
 
 .login-form {
   background: #fff;
@@ -30,7 +49,7 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-          flex-direction: column;
+  flex-direction: column;
   border-radius: 4px;
   box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
 }
@@ -48,14 +67,14 @@
 .login-form .email_input input {
   font-size: 16px;
   display: block;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   width: 100%;
   padding: 10px 1px;
   border: 0;
   border-bottom: 1px solid #747474;
   outline: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 .login-form .email_input input::-webkit-input-placeholder {
   text-transform: uppercase;
@@ -82,14 +101,14 @@
 .login-form .password_input input {
   font-size: 16px;
   display: block;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   width: 100%;
   padding: 10px 1px;
   border: 0;
   border-bottom: 1px solid #747474;
   outline: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 .login-form .password_input input::-webkit-input-placeholder {
   text-transform: uppercase;
@@ -110,7 +129,6 @@
   border-color: #222;
 }
 
-
 .login-form a.link {
   text-decoration: none;
   color: #747474;
@@ -124,13 +142,13 @@
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-          flex-direction: row;
+  flex-direction: row;
 }
 .login-form .action button {
   width: 100%;
   border: none;
   padding: 18px;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   cursor: pointer;
   text-transform: uppercase;
   background: #e8e9ec;
@@ -139,8 +157,8 @@
   border-bottom-right-radius: 0;
   letter-spacing: 0.2px;
   outline: 0;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .login-form .action button:hover {
   background: #d8d8d8;
