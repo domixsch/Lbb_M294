@@ -59,6 +59,8 @@ async function deleteTask(id) {
   getTasks();
 }
 
+
+
 function renderTasks(tasks) {
   tasksElement.replaceChildren();
 
@@ -67,13 +69,13 @@ function renderTasks(tasks) {
     liElement.innerText = item.title;
 
     const deleteButton = document.createElement("button");
-    deleteButton.innerText = "Delete";
+    deleteButton.innerHTML = '<img class="img" src="/images/delete.png" alt="Edit">';
     deleteButton.onclick = function () {
       deleteTask(item.id);
     };
 
     const editButton = document.createElement("button");
-    editButton.innerText = "Edit";
+    editButton.innerHTML = '<img class="img" src="/images/edit.png" alt="Edit">';
     editButton.onclick = function () {
       editTask(item.id);
     };
